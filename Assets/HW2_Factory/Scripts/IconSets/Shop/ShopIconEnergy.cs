@@ -1,8 +1,11 @@
 using UnityEngine;
 
-public class ShopIconEnergy : Icon
+namespace Assets.HW2_Factory
 {
-    public ShopIconEnergy(IconTypes iconTypes, Sprite sprite) : base(iconTypes, sprite)
+    public class ShopIconEnergy : Icon
     {
+        public ShopIconEnergy(IconTypes iconTypes, Sprite sprite) : base(iconTypes, sprite)
+        {
+        }
     }
 }

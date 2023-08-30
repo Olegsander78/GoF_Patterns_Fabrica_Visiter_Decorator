@@ -1,8 +1,11 @@
 using UnityEngine;
 
-public class MainMenuIconCoin : Icon
+namespace Assets.HW2_Factory
 {
-    public MainMenuIconCoin(IconTypes iconTypes, Sprite sprite) : base(iconTypes, sprite)
+    public class MainMenuIconCoin : Icon
     {
+        public MainMenuIconCoin(IconTypes iconTypes, Sprite sprite) : base(iconTypes, sprite)
+        {
+        }
     }
 }

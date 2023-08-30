@@ -1,8 +1,11 @@
 using UnityEngine;
 
-public class ShopIconCoin : Icon
+namespace Assets.HW2_Factory
 {
-    public ShopIconCoin(IconTypes iconTypes, Sprite sprite) : base(iconTypes, sprite)
+    public class ShopIconCoin : Icon
     {
+        public ShopIconCoin(IconTypes iconTypes, Sprite sprite) : base(iconTypes, sprite)
+        {
+        }
     }
 }

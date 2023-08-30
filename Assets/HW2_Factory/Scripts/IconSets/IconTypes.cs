@@ -1,5 +1,8 @@
-public enum IconTypes 
+namespace Assets.HW2_Factory
 {
-    COIN = 0,
-    ENERGY
+    public enum IconTypes
+    {
+        COIN = 0,
+        ENERGY
+    }
 }

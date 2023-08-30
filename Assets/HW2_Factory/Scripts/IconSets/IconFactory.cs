@@ -1,5 +1,7 @@
-public abstract class IconFactory
+namespace Assets.HW2_Factory
 {
-    public abstract Icon Get(IconTypes iconTypes);
+    public abstract class IconFactory
+    {
+        public abstract Icon Get(IconTypes iconTypes);
+    }
 }
-    

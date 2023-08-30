@@ -1,18 +1,21 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIPanel : MonoBehaviour
+namespace Assets.HW2_Factory
 {
-    [SerializeField] private Image _coin; 
-    [SerializeField] private Image _energy;
-    
-    public void SetIconCoin(Sprite sprite)
+    public class UIPanel : MonoBehaviour
     {
-        _coin.sprite = sprite;
-    }
+        [SerializeField] private Image _coin;
+        [SerializeField] private Image _energy;
 
-    public void SetIconEnergy(Sprite sprite)
-    {
-        _energy.sprite = sprite;
+        public void SetIconCoin(Sprite sprite)
+        {
+            _coin.sprite = sprite;
+        }
+
+        public void SetIconEnergy(Sprite sprite)
+        {
+            _energy.sprite = sprite;
+        }
     }
 }

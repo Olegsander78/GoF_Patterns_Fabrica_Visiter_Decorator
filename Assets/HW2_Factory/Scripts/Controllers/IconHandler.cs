@@ -1,30 +1,33 @@
 using System;
 using UnityEngine;
 
-public class IconHandler : MonoBehaviour
+namespace Assets.HW2_Factory
 {
-    [SerializeField] private PlaceForUseIconTypes _placeForUse;
-
-    [SerializeField] private UIPanel _uIPanel;
-
-    [ContextMenu("SetIcons")]
-    public void SetIcons()
+    public class IconHandler : MonoBehaviour
     {
-        IconFactory iconFactory;
+        [SerializeField] private PlaceForUseIconTypes _placeForUse;
 
-        switch (_placeForUse)
+        [SerializeField] private UIPanel _uIPanel;
+
+        [ContextMenu("SetIcons")]
+        public void SetIcons()
         {
-            case PlaceForUseIconTypes.MAIN_MENU:
-                iconFactory = new MainMenuIconFactory();
-                break;
-            case PlaceForUseIconTypes.SHOP:
-                iconFactory = new ShopIconFactory();
-                break;
-            default:
-                throw new ArgumentException(nameof(_placeForUse));
-        }
+            IconFactory iconFactory;
 
-        _uIPanel.SetIconCoin(iconFactory.Get(IconTypes.COIN).SpriteIcon);
-        _uIPanel.SetIconEnergy(iconFactory.Get(IconTypes.ENERGY).SpriteIcon);
+            switch (_placeForUse)
+            {
+                case PlaceForUseIconTypes.MAIN_MENU:
+                    iconFactory = new MainMenuIconFactory();
+                    break;
+                case PlaceForUseIconTypes.SHOP:
+                    iconFactory = new ShopIconFactory();
+                    break;
+                default:
+                    throw new ArgumentException(nameof(_placeForUse));
+            }
+
+            _uIPanel.SetIconCoin(iconFactory.Get(IconTypes.COIN).SpriteIcon);
+            _uIPanel.SetIconEnergy(iconFactory.Get(IconTypes.ENERGY).SpriteIcon);
+        }
     }
 }

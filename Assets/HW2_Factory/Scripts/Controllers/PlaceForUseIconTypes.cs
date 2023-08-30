@@ -1,5 +1,8 @@
-public enum PlaceForUseIconTypes 
+namespace Assets.HW2_Factory
 {
-    MAIN_MENU = 0,
-    SHOP 
+    public enum PlaceForUseIconTypes
+    {
+        MAIN_MENU = 0,
+        SHOP
+    }
 }

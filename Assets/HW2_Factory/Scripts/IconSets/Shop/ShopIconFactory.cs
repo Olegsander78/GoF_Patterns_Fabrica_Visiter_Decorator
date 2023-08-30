@@ -1,20 +1,23 @@
 using System;
 using UnityEngine;
 
-public class ShopIconFactory : IconFactory
+namespace Assets.HW2_Factory
 {
-    public override Icon Get(IconTypes iconTypes)
+    public class ShopIconFactory : IconFactory
     {
-        switch (iconTypes)
+        public override Icon Get(IconTypes iconTypes)
         {
-            case IconTypes.COIN:
-                var coinSprite = Resources.Load<Sprite>("coin_shop");
-                return new ShopIconCoin(iconTypes, coinSprite);
-            case IconTypes.ENERGY:
-                var energySprite = Resources.Load<Sprite>("energy_shop");
-                return new ShopIconEnergy(iconTypes, energySprite);
-            default:
-                throw new ArgumentException(nameof(iconTypes));
+            switch (iconTypes)
+            {
+                case IconTypes.COIN:
+                    var coinSprite = Resources.Load<Sprite>("coin_shop");
+                    return new ShopIconCoin(iconTypes, coinSprite);
+                case IconTypes.ENERGY:
+                    var energySprite = Resources.Load<Sprite>("energy_shop");
+                    return new ShopIconEnergy(iconTypes, energySprite);
+                default:
+                    throw new ArgumentException(nameof(iconTypes));
+            }
         }
     }
 }
