@@ -1,5 +1,5 @@
-# GoF Patterns Abstract Fabrica, Visiter & Decorator
- Practice using the "Fabrica", "Visiter", "Decorator" patterns in Unity 
+# GoF Patterns Abstract Factory, Visiter & Decorator
+ Practice using the "Abstract Factory", "Visiter", "Decorator" patterns in Unity 
 
  ### Абстрактная фабрика 
 1. В игре с различными типами персонажей можно использовать паттерн абстрактная фабрика для создания экземпляров персонажей в зависимости от выбора игрока. Например, при выборе класса персонажа "воин" фабрика может создавать экземпляры воинов с различными характеристиками и способностями, а при выборе класса "маг" - экземпляры магов с уникальными заклинаниями.
