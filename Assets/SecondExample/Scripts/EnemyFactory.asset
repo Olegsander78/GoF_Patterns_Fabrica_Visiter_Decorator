@@ -15,48 +15,18 @@ MonoBehaviour:
   _small:
     _prefab: {fileID: 8953222149561864652, guid: 8726610490a695b4f9a9511e85b4f4e5,
       type: 3}
+    _health: 3
     _speed: 10
-    _health:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 1
-        value: 3
-        inSlope: 299.51694
-        outSlope: 299.51694
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.029677419
-      - serializedVersion: 3
-        time: 2.0026855
-        value: 29.438286
-        inSlope: 120.23161
-        outSlope: 120.23161
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.10105772
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
+    _weight: 5
   _medium:
     _prefab: {fileID: 1667227624855010596, guid: 6fb7a80f3f38b1046ac3de89a7ae91e0,
       type: 3}
+    _health: 5
     _speed: 5
-    _health:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
+    _weight: 20
   _large:
     _prefab: {fileID: 131363657852868301, guid: 5884578d2d193fb48be0fc044f73c88b,
       type: 3}
+    _health: 10
     _speed: 2
-    _health:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
+    _weight: 40

@@ -10,7 +10,7 @@ public class EnemyFactory : ScriptableObject
     {
         EnemyConfig config = GetConfig(enemyType);
         Enemy instance = Instantiate(config.Prefab);
-        instance.Initialize(config.Health, config.Speed);
+        instance.Initialize(config.Health, config.Speed, config.Weight);
         return instance;
     }
 
