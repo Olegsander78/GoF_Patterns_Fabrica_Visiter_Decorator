@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace Assets.HW5_Decorator
 {
     public struct CharacterStats 
@@ -25,6 +23,11 @@ namespace Assets.HW5_Decorator
                 Intelligence = (int)(charOne.Intelligence * multiplier),
                 Agility = (int)(charOne.Agility * multiplier)
             };
+        }
+
+        public override string ToString()
+        {
+            return $"Strength: {Strength}, Intelligence: {Intelligence}, Agility: {Agility}";
         }
     }
 }
