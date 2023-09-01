@@ -6,9 +6,6 @@ namespace Assets.Visitor
     public abstract class Enemy: MonoBehaviour
     {
         public event Action<Enemy> Died;
-        public int Weight => _weight; 
-
-        [SerializeField] private int _weight;
 
 
         //Какая то общая логика врага: передвижение, жизни и тп.

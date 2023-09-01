@@ -27,14 +27,12 @@ namespace Assets.Visitor
         }
 
         private void CalculateTotalEnemiesWeight(int totalWeight)
-        {            
+        {
 
             if (_currentTotalEnemiesWeight <= _totalEnemiesWeight)
-            {
                 _currentTotalEnemiesWeight += totalWeight;
-            }
             else
-            {                
+            {
                 _spawner.StopWork();
                 Debug.LogWarning($"<color=red>The total weight of the enemies has reached the maximum: {_currentTotalEnemiesWeight}, Max:{_totalEnemiesWeight}</color>");
             }

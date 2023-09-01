@@ -34,13 +34,13 @@ namespace Assets.Visitor
         {
             public int TotalWeight { get; private set; }
 
-            public void Visit(Ork ork) => TotalWeight += ork.Weight;
+            public void Visit(Ork ork) => TotalWeight += 20;
 
-            public void Visit(Human human) => TotalWeight += human.Weight;
+            public void Visit(Human human) => TotalWeight += 15;
 
-            public void Visit(Elf elf) => TotalWeight += elf.Weight;
+            public void Visit(Elf elf) => TotalWeight += 10;
 
-            public void Visit(Vampire vampire) => TotalWeight += vampire.Weight;
+            public void Visit(Vampire vampire) => TotalWeight += 25;
 
             public void Visit(Enemy enemy) => Visit((dynamic)enemy);
         }
