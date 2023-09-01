@@ -18,10 +18,14 @@ public class PositionGenerator : MonoBehaviour
     public Vector3 GetPosition()
     {
         var position = GeneratePosition();
+        var counter = 0;
 
-        while (!CheckFreePosition(position))
+        while (CheckFreePosition(position) == false)
         {
             position = GeneratePosition();
+            
+            if (counter++ > 5)
+                break;
         }
 
         return position;

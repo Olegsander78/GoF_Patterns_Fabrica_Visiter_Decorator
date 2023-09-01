@@ -5,17 +5,19 @@ using UnityEngine;
 
 namespace Assets.Visitor
 {
-    public class Spawner: MonoBehaviour, IEnemyDeathNotifier
+    public class Spawner: MonoBehaviour, IEnemyDeathNotifier, IEnemySpawnNotifier
     {
+        public event Action<Enemy> OnDeathNotified;
+        public event Action<Enemy> OnSpawnNotified;
+
         [SerializeField] private float _spawnCooldown;
-        [SerializeField] private List<Transform> _spawnPoints;
+        //[SerializeField] private List<Transform> _spawnPoints;
         [SerializeField] private EnemyFactory _enemyFactory;
+        [SerializeField] private PositionGenerator _positionGenerator;
 
         private List<Enemy> _spawnedEnemies  = new List<Enemy>();
 
         private Coroutine _spawn;
-
-        public event Action<Enemy> Notified;
 
         public void StartWork()
         {
@@ -43,9 +45,15 @@ namespace Assets.Visitor
             while (true)
             {
                 Enemy enemy = _enemyFactory.Get((EnemyType)UnityEngine.Random.Range(0, Enum.GetValues(typeof(EnemyType)).Length));
-                enemy.MoveTo(_spawnPoints[UnityEngine.Random.Range(0, _spawnPoints.Count)].position);
+                
+                var spawnPosition = _positionGenerator.GetPosition();
+                enemy.MoveTo(spawnPosition);
+
                 enemy.Died += OnEnemyDied;
+
                 _spawnedEnemies.Add(enemy);
+                OnSpawnNotified?.Invoke(enemy);
+
                 yield return new WaitForSeconds(_spawnCooldown);
             }
         }
@@ -53,7 +61,7 @@ namespace Assets.Visitor
         private void OnEnemyDied(Enemy enemy)
         {
             enemy.Died -= OnEnemyDied;
-            Notified.Invoke(enemy);
+            OnDeathNotified.Invoke(enemy);
             _spawnedEnemies.Remove(enemy);
         }
     }

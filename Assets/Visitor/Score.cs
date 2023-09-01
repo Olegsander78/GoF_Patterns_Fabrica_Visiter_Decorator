@@ -13,12 +13,12 @@ namespace Assets.Visitor
         public Score(IEnemyDeathNotifier enemyDeathNotifier)
         {
             _enemyDeathNotifier = enemyDeathNotifier;
-            _enemyDeathNotifier.Notified += OnEnemyKilled;
+            _enemyDeathNotifier.OnDeathNotified += OnEnemyKilled;
 
             _enemyVisiter = new EnemyVisiter();
         }
 
-        ~Score() => _enemyDeathNotifier.Notified -= OnEnemyKilled;
+        ~Score() => _enemyDeathNotifier.OnDeathNotified -= OnEnemyKilled;
 
         public void OnEnemyKilled(Enemy enemy)
         {
