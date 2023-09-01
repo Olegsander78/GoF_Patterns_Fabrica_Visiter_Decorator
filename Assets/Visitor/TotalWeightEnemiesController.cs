@@ -7,14 +7,11 @@ namespace Assets.Visitor
         [SerializeField] private Spawner _spawner;
         [SerializeField] private float _totalEnemiesWeight;
 
-        private float _currentTotalEnemiesWeight;
         private TotalWeightEnemies _totalWeightEnemy;
 
         private void Awake()
         {
             _totalWeightEnemy = new TotalWeightEnemies(_spawner);
-
-            _currentTotalEnemiesWeight = _totalWeightEnemy.Value;
 
             _totalWeightEnemy.OnTotalWeightEnemiesChanged += CalculateTotalEnemiesWeight;            
 
@@ -28,14 +25,11 @@ namespace Assets.Visitor
 
         private void CalculateTotalEnemiesWeight(int totalWeight)
         {
-
-            if (_currentTotalEnemiesWeight <= _totalEnemiesWeight)
-                _currentTotalEnemiesWeight += totalWeight;
-            else
+            if (_totalWeightEnemy.Value >= _totalEnemiesWeight)
             {
                 _spawner.StopWork();
-                Debug.LogWarning($"<color=red>The total weight of the enemies has reached the maximum: {_currentTotalEnemiesWeight}, Max:{_totalEnemiesWeight}</color>");
-            }
+                Debug.LogWarning($"<color=red>The total weight of the enemies has reached the maximum: {_totalWeightEnemy.Value}, Max:{_totalEnemiesWeight}</color>");
+            }                    
         }
     }
 }

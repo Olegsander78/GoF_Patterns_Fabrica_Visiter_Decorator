@@ -9,7 +9,6 @@ namespace Assets.Visitor
         public int Value => _enemyVisiter.TotalWeight;
 
         private IEnemySpawnNotifier _enemySpawnNotifier;
-
         private TotalWeightEnemiesVisiter _enemyVisiter;
 
         public TotalWeightEnemies(IEnemySpawnNotifier enemySpawnNotifier)
